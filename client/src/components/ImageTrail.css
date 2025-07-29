@@ -1,0 +1,50 @@
+/* D:/client/src/components/ImageTrail.css */
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100; /* High z-index to ensure it's on top of other elements in its section */
+  border-radius: 8px;
+  background: transparent;
+  overflow: visible; /* Allows images to go outside the container during animation */
+}
+
+.content__img {
+  width: 250px; /* Fixed width for individual images */
+  height:250px;
+  aspect-ratio: 1.1; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  position: absolute; /* Positioned absolutely within the .content container */
+  top: 0;
+  left: 0;
+  opacity: 0; /* Initially hidden */
+  overflow: hidden;
+  will-change: transform, filter; /* Optimize for animation */
+}
+
+.content__img-inner {
+  background-position: 50% 50%;
+  width: calc(100% + 20px); /* Slightly larger than parent to allow scaling without showing edges */
+  height: calc(100% + 20px);
+  background-size: cover;
+  position: absolute;
+  top: calc(-1 * 20px / 2);
+  left: calc(-1 * 20px / 2);
+}
+.imgtrail{
+    background-color: aliceblue;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6); /* Optional for contrast */
+  border-radius: 10px;
+  backdrop-filter: blur(3px); /* Optional for glass effect */
+}
